@@ -8,7 +8,7 @@ curl --silent https://raw.githubusercontent.com/lingard/dot-files/master/install
 1. Create `~/Developer/`
 2. Change default shell to ZSH: `chsh -s /bin/zsh`.
 3. Install XCode.
-4. Install [Hermit](https://pcaro.es/p/hermit/#downloads) font.
+4. Install [Fira mono](https://github.com/mozilla/Fira/tree/master/ttf) font.
 5. Add honukai colors in iterm preferences
 
 ## Structure
@@ -23,8 +23,6 @@ curl --silent https://raw.githubusercontent.com/lingard/dot-files/master/install
 
 * Insert proper hosts from `etc/hosts` to system’s `/etc/hosts`.
 * Clone this project (dotfiles **RECURSIVELY** `--recursive`) and run `sh bootstrap-new-system.sh`
-* Download the Yosemite style [Sublime Text icon](https://dribbble.com/shots/1840393-Sublime-Text-Yosemite-Icon?list=searches&tag=sublime_text) (instructions on usage are included in download)
-* Install Sublime packages with Package Control: "Seti UI"
 
 ## Todo
 

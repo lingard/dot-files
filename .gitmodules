@@ -3,7 +3,7 @@
 	url = git@github.com/kkga/spacegray.git
 [submodule "terminal/themes/honukai-iterm-zsh"]
 	path = terminal/themes/honukai-iterm-zsh
-	url = git@github.com/oskarkrawczyk/honukai-iterm-zsh.git
+	url = git@github.com:oskarkrawczyk/honukai-iterm-zsh.git
 [submodule "terminal/completion"]
 	path = terminal/completion
 	url = https://github.com/zsh-users/zsh-completions.git

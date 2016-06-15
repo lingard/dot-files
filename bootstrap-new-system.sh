@@ -58,7 +58,6 @@ if ! xcode-select --print-path &> /dev/null; then
 
 fi
 
-
 # If we on OS X, install homebrew and tweak system a bit.
 if [[ `uname` == 'Darwin' ]]; then
   which -s brew
@@ -85,7 +84,7 @@ if [[ `uname` == 'Darwin' ]]; then
 fi
 
 echo 'Symlinking config files...'
-  source 'symlink-dotfiles.sh'
+  source 'bin/symlink-dotfiles.sh'
 
 echo 'installing oh my zsh'
 curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
@@ -101,7 +100,7 @@ echo 'Applying sublime config...'
       cp -r $theme $as
     done
     rm $asprefs
-    cp -r $st/pm-themes $as
+    #cp -r $st/pm-themes $as
   else
     echo "Install Sublime Text http://www.sublimetext.com"
   fi

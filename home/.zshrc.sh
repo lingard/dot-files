@@ -10,10 +10,10 @@ curr="$pm/dotfiles"
 # source "$curr/terminal/highlight.sh"
 # echo "Load end\t" $(gdate "+%s-%N")
 
-autoload -U colors && colors
+#autoload -U colors && colors
 
 plugins=(git bower sublime brew history node npm sudo web-search)
-ZSH_THEME="honukai"
+ZSH_THEME=honukai
 
 # Load and execute the prompt theming system.
 #fpath=("$curr/terminal" $fpath)

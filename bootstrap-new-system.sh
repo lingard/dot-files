@@ -91,6 +91,11 @@ curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | 
 
 ln -sf "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ~/bin/subl
 
+# Type `git open` to open the GitHub page or website for a repository.
+npm install -g git-open
+# trash as the safe `rm` alternative
+npm install --global trash-cli
+
 echo 'Applying sublime config...'
   st=$(pwd)/sublime/packages
   as="$HOME/Library/Application Support/Sublime Text 3/Packages"

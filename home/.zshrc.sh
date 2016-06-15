@@ -4,18 +4,21 @@ curr="$pm/dotfiles"
 
 # Load main files.
 # echo "Load start\t" $(gdate "+%s-%N")
-source "$curr/terminal/startup.sh"
+# source "$curr/terminal/startup.sh"
 # echo "$curr/terminal/startup.sh"
-source "$curr/terminal/completion.sh"
-source "$curr/terminal/highlight.sh"
+# source "$curr/terminal/completion.sh"
+# source "$curr/terminal/highlight.sh"
 # echo "Load end\t" $(gdate "+%s-%N")
 
 autoload -U colors && colors
 
+plugins=(git bower sublime brew history node npm sudo web-search)
+ZSH_THEME="honukai"
+
 # Load and execute the prompt theming system.
-fpath=("$curr/terminal" $fpath)
-autoload -Uz promptinit && promptinit
-prompt 'christer'
+#fpath=("$curr/terminal" $fpath)
+#autoload -Uz promptinit && promptinit
+#prompt 'christer'
 
 # ==================================================================
 # = Aliases =
@@ -321,44 +324,6 @@ function aes-dec() {
   openssl enc -aes-256-cbc -d -in $1 -out "${1%.*}"
 }
 
-# Converts a.mkv to a.m4v.
-function mkv2mp4() {
-  for file in "$@"; do
-    ffmpeg -i $file -map 0 -c copy "${file%.*}.m4v"
-  done
-}
-
-function mkv2mp4_1() {
-  for file in "$@"; do
-    ffmpeg -i $file -map 0:0 -map 0:1 -c copy -c:s mov_text "${file%.*}.m4v"
-  done
-}
-
-function mkv2mp4_2() {
-  for file in "$@"; do
-    ffmpeg -i $file -map 0:0 -map 0:2 -c copy -c:s mov_text "${file%.*}.m4v"
-  done
-}
-
-function mkv2mp4_3() {
-  for file in "$@"; do
-    ffmpeg -i $file -map 0:0 -map 0:3 -c copy -c:s mov_text "${file%.*}.m4v"
-  done
-}
-
-# Adds subs from a.srt to a.m4v.
-function addsubs() {
-  for file in "$@"; do
-    local raw="${file%.*}"
-    local old="$raw.m4v"
-    local new="$raw-sub.m4v"
-    ffmpeg -i $old -i $file -map 0 -map 1 -c copy -c:s mov_text $new
-    mv $new $old
-    rm $file
-  done
-}
-
-
 # Shortens GitHub URLs. By Sorin Ionescu <sorin.ionescu@gmail.com>
 function gitio() {
   local url="$1"
@@ -402,5 +367,3 @@ function preview() {
   [[ -z "$item" ]] && item='.'
   open $1 -a 'Preview'
 }
-
-plugins=(git bower sublime brew history node npm sudo web-search)  

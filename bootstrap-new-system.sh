@@ -64,7 +64,7 @@ if [[ `uname` == 'Darwin' ]]; then
   if [[ $? != 0 ]]; then
     echo 'Installing Homebrew...'
       ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-        
+
       echo 'Installing Homebrew dependencies...'
         source 'etc/brew.sh'
   fi
@@ -104,5 +104,11 @@ echo 'Applying sublime config...'
   else
     echo "Install Sublime Text http://www.sublimetext.com"
   fi
+
+echo 'Copying iterm theme...'
+  st=$(pwd)/terminal/themes/honukai-iterm-zsh/honukai.zsh-theme
+  as="$HOME/.oh-my-zsh/themes"
+
+  cp $theme $as
 
 popd

@@ -16,6 +16,7 @@ brew cask install dropbox
 brew cask install rescuetime
 brew cask install flux
 brew cask install slack
+brew cask install spotify
 
 # dev
 brew cask install iterm2

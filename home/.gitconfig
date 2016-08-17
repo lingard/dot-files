@@ -43,7 +43,7 @@
   ui = true
 
 [core]
-  editor = subl
+  editor = nano
   excludesfile = ~/.gitignore
   #pager = diff-highlight | less -r
 

@@ -34,3 +34,5 @@ curl --silent https://raw.githubusercontent.com/lingard/dot-files/master/install
 * [] Fix open sublime from terminal
 * [] Add support for atom/nuclide
 * [] Fix bootstrap installation as it doesn't really work atm
+* [] Add vagrant
+* [] Add xcode theme and cusomization

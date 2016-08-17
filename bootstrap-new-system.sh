@@ -83,11 +83,13 @@ if [[ `uname` == 'Darwin' ]]; then
 
 fi
 
-echo 'Symlinking config files...'
-  source 'bin/symlink-dotfiles.sh'
-
+# Must be done before symlinking as oh-my-zsh will override .zshrc
 echo 'installing oh my zsh'
 curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+
+
+echo 'Symlinking config files...'
+  source 'bin/symlink-dotfiles.sh'
 
 ln -sf "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ~/bin/subl
 

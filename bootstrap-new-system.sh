@@ -2,11 +2,11 @@
 
 # A simple script for setting up OSX dev environment.
 
-dev="$HOME/Developer/christer"
+dev="$HOME/Developer/christer/dotfiles"
 pushd .
 mkdir -p $dev
 cd $dev
-
+ls
 # echo 'Enter new hostname of the machine (e.g. macbook-christer)'
 #   read hostname
 #   echo "Setting new hostname to $hostname..."
@@ -66,11 +66,11 @@ if [[ `uname` == 'Darwin' ]]; then
       ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
       echo 'Installing Homebrew dependencies...'
-        source './etc/brew.sh'
+        source 'etc/brew.sh'
   fi
 
   echo 'Tweaking OS X...'
-    source './etc/osx.sh'
+    source 'etc/osx.sh'
 
   # http://github.com/sindresorhus/quick-look-plugins
   echo 'Installing brew and cask dependencies...'
@@ -79,7 +79,7 @@ if [[ `uname` == 'Darwin' ]]; then
   #brew install caskroom/cask/brew-cask
 
   # install cask dependencies
-  source './etc/brew-cask.sh'
+  source 'etc/brew-cask.sh'
 
 fi
 
@@ -88,8 +88,8 @@ echo 'installing oh my zsh'
 curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 
 
-echo 'Symlinking config files...'
-  source './symlink-dotfiles.sh'
+#echo 'Symlinking config files...'
+#  source 'bin/symlink-dotfiles.sh'
 
 ln -sf "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ~/bin/subl
 
@@ -99,21 +99,18 @@ npm install -g git-open
 npm install --global trash-cli
 
 echo 'Applying sublime config...'
-  st=$(pwd)/sublime/packages
-  as="$HOME/Library/Application Support/Sublime Text 3/Packages"
+  st=$(pwd)/sublime/Packages
+  as=$HOME/Library/Application\ Support/Sublime\ Text\ 3/Packages
   asprefs="$as/User/Preferences.sublime-settings"
   if [[ -d "$as" ]]; then
-    for theme in $st/Theme*; do
-      cp -r $theme $as
-    done
     rm $asprefs
-    #cp -r $st/pm-themes $as
+    cp -r $st/Theme\ -\ Spacegray $as
   else
     echo "Install Sublime Text http://www.sublimetext.com"
   fi
 
 echo 'Copying iterm theme...'
-  st=$(pwd)/terminal/themes/honukai-iterm-zsh/honukai.zsh-theme
+  theme=$(pwd)/terminal/themes/honukai-iterm-zsh/honukai.zsh-theme
   as="$HOME/.oh-my-zsh/themes"
 
   cp $theme $as

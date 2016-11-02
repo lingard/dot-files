@@ -2,7 +2,7 @@
 
 # A simple script for setting up OSX dev environment.
 
-dev="$HOME/Developer"
+dev="$HOME/Developer/christer"
 pushd .
 mkdir -p $dev
 cd $dev
@@ -66,11 +66,11 @@ if [[ `uname` == 'Darwin' ]]; then
       ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
       echo 'Installing Homebrew dependencies...'
-        source 'etc/brew.sh'
+        source './etc/brew.sh'
   fi
 
   echo 'Tweaking OS X...'
-    source 'etc/osx.sh'
+    source './etc/osx.sh'
 
   # http://github.com/sindresorhus/quick-look-plugins
   echo 'Installing brew and cask dependencies...'
@@ -79,7 +79,7 @@ if [[ `uname` == 'Darwin' ]]; then
   #brew install caskroom/cask/brew-cask
 
   # install cask dependencies
-  source 'etc/brew-cask.sh'
+  source './etc/brew-cask.sh'
 
 fi
 
@@ -89,7 +89,7 @@ curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | 
 
 
 echo 'Symlinking config files...'
-  source 'bin/symlink-dotfiles.sh'
+  source './symlink-dotfiles.sh'
 
 ln -sf "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ~/bin/subl
 

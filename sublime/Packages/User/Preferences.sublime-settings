@@ -2,7 +2,7 @@
 	"always_show_minimap_viewport": false,
 	"bold_folder_labels": true,
 	"caret_style": "phase",
-	"color_scheme": "Packages/User/SublimeLinter/base16-ocean.dark (SL).tmTheme",
+	"color_scheme": "Packages/Theme - Spacegray/base16-ocean.dark.tmTheme",
 	"draw_indent_guides": true,
 	"ensure_newline_at_eof_on_save": true,
 	"file_exclude_patterns":

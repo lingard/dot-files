@@ -7,22 +7,23 @@ pushd .
 mkdir -p $dev
 cd $dev
 ls
-# echo 'Enter new hostname of the machine (e.g. macbook-christer)'
-#   read hostname
-#   echo "Setting new hostname to $hostname..."
-#   scutil --set HostName "$hostname"
-#   compname=$(sudo scutil --get HostName | tr '-' '.')
-#   echo "Setting computer name to $compname"
-#   scutil --set ComputerName "$compname"
-#   sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "$compname"
 
-# pub=$HOME/.ssh/id_rsa.pub
-# echo 'Checking for SSH key, generating one if it does not exist...'
-#   [[ -f $pub ]] || ssh-keygen -t rsa
+echo 'Enter new hostname of the machine (e.g. macbook-christer)'
+   read hostname
+   echo "Setting new hostname to $hostname..."
+   scutil --set HostName "$hostname"
+   compname=$(sudo scutil --get HostName | tr '-' '.')
+   echo "Setting computer name to $compname"
+   scutil --set ComputerName "$compname"
+   sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "$compname"
 
-# echo 'Copying public key to clipboard. Paste it into your Github account...'
-#   [[ -f $pub ]] && cat $pub | pbcopy
-#   open 'https://github.com/account/ssh'
+ pub=$HOME/.ssh/id_rsa.pub
+ echo 'Checking for SSH key, generating one if it does not exist...'
+   [[ -f $pub ]] || ssh-keygen -t rsa
+
+ echo 'Copying public key to clipboard. Paste it into your Github account...'
+   [[ -f $pub ]] && cat $pub | pbcopy
+   open 'https://github.com/account/ssh'
 
 # Install Xcode Command Line Tools
 if ! xcode-select --print-path &> /dev/null; then

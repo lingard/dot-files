@@ -27,6 +27,7 @@ brew cask install imageoptim
 # communication
 brew cask install skype
 brew cask install airmail
+brew cask install telegram
 
 # browsers
 brew cask install google-chrome
